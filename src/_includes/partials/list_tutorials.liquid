@@ -1,0 +1,8 @@
+<li class="tutorial">
+    <p class="title">
+        <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+    </p>
+    <p class="summary">{{ post.data.summary }}</p>
+    {%- assign children = collections.all | where : 'data.parent' , post.data.children -%}
+    <p class="meta">{{children.length}} Lessons | {{post.data.children}}</p>
+</li>

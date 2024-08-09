@@ -1,0 +1,21 @@
+---
+layout: tutorial
+---
+
+
+{% include 'partials/nav_roadmap' %}
+
+<section id="lesson-content">
+	<h4 class="title">{{title}}</h4>
+	<div class="content">
+		{{ content }}
+
+		<div class="next-tutorial">
+			{% comment %} Link to first post in collection with same name as tutorial-code {% endcomment %}
+			{% assign first_lesson = collections.all | where: 'data.parent' , children | first %}
+			<a href="{{ first_lesson.url  }}" class="next button">Start {{ first_lesson.data.lesson }}</a>
+		</div>
+
+	</div>
+
+</section>

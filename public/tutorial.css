@@ -1,0 +1,373 @@
+@import url('/public/twodash.css');
+
+:root {
+    --max-width: 1600px;
+}
+
+body {
+    font-size: 15px;
+    background-color: #d7f3f3;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    max-width: calc(var(--max-width) - 40px);
+    margin: 10px auto 0;
+    background: var(--primary);
+    /* color: violet; */
+    border-radius: 10px 10px 0 0;
+}
+
+header a {
+    font-weight: 500;
+    font-size: 1em;
+    color: var(--secondary);
+}
+
+
+#page {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    max-width: var(--max-width);
+    /* min-height: 80vh; */
+    margin: 0px auto;
+}
+
+/* GENERICS ----------------------- */
+
+/* LINKS */
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--secondary);
+}
+
+a:visited {
+    opacity: 0.95;
+}
+
+
+/* BUTTONS */
+button,
+.button {
+    background-color: #FFFFFF;
+    border: 0;
+    border-radius: .5rem;
+    box-sizing: border-box;
+    color: #111827;
+    font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    padding: .75rem 1rem;
+    text-align: center;
+    text-decoration: none #D1D5DB solid;
+    text-decoration-thickness: auto;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+button:hover,
+.button:hover {
+    background-color: rgb(19, 108, 46);
+}
+
+button:focus,
+.button:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+button:focus-visible,
+.button:focus-visible {
+    box-shadow: none;
+}
+
+button:disabled,
+.button:disabled {
+    background-color: #D1D5DB;
+    color: #6B7280;
+    cursor: not-allowed;
+}
+
+button:disabled:hover {
+    background-color: #D1D5DB;
+}
+
+button:active,
+.button:active {
+    scale: 0.9;
+}
+
+button.complete,
+.button.complete {
+    padding-left: 34px;
+    background: url('/public/images/check.svg') 8px center no-repeat rgb(22, 156, 62);
+    background-size: 20px;
+    color: var(--foreground);
+}
+
+button.next,
+.button.next {
+    padding: 15px 44px 15px 20px;
+    background: url('/public/images/circle-right.svg') calc(100% - 12px) center no-repeat var(--primary);
+    background-size: 24px;
+    color: var(--secondary);
+}
+
+.centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* SECTIONS ----------------------- */
+
+main {
+    display: grid;
+    max-width: 100%;
+    justify-content: stretch;
+    background-color: #025f92;
+    grid-template-columns: 300px 1fr;
+    padding: 14px 0;
+}
+
+section#lesson-nav {
+    flex-shrink: 0;
+    padding: 20px;
+    color: var(--secondary);
+}
+
+div.logo a {}
+
+#lesson-nav .tutorial-title {
+    font-weight: 600;
+    margin: 1.5em 0 2em;
+}
+
+#lesson-nav ul {
+    margin: 0 0 0 5px;
+    padding: 0 0 0 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+#lesson-nav ul li {
+    margin-bottom: 12px;
+    padding: 0.5em;
+    border-bottom: 1px solid #33333353;
+    font-size: 14px;
+}
+
+#lesson-nav ul li:nth-last-child(1),
+#lesson-nav ul li.lesson {
+    border-bottom: none;
+}
+
+#lesson-nav a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#lesson-nav li a {
+    display: block;
+    background: no-repeat center right;
+    background-size: 16px;
+    padding-right: 20px;
+}
+
+#lesson-nav li.completed {
+    opacity: 0.5;
+}
+
+#lesson-nav li.completed a {
+    background-image: url(/public/images/check.svg);
+}
+
+#lesson-nav li.active {
+    color: var(--primary);
+    background-color: var(--secondary);
+    border-radius: 4px;
+}
+
+#lesson-nav li.active a {
+    background-image: url(/public/images/circle-right-active.svg);
+    background-size: 20px;
+
+}
+
+#lesson-nav ul.tutorials li label {
+    display: block;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#lesson-nav ul.tutorials li label::before {
+    content: "+ ";
+}
+
+
+#lesson-nav ul.tutorials li:has(input[type="checkbox"]:checked) label::before {
+    content: "- ";
+}
+
+
+#lesson-nav ul.tutorials li ul.lessons {
+    display: none;
+}
+
+#lesson-nav ul.tutorials input[type="checkbox"] {
+    display: none;
+}
+
+
+#lesson-nav ul.tutorials input[type="checkbox"]:checked~ul.lessons {
+    display: block;
+}
+
+
+/* LESSON CONTENT ----------------------- */
+
+section#lesson-content {
+    background: var(--secondary);
+    color: var(--text-dark-200);
+    border-radius: 10px 0 0 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow: hidden;
+}
+
+#lesson-content .title {
+    margin: 0 0 0px 0;
+    padding: 20px;
+    font-size: 14px;
+    background-color: var(--foreground);
+    border-bottom: 1px solid #eee;
+    height: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#lesson-content .content {
+    padding: 15px 45px;
+    width: calc(100% - 60px);
+    line-height: 1.5;
+    max-width: 100ch;
+    font-size: 1.2em;
+}
+
+#lesson-content h1 {
+    font-size: 2.5em;
+}
+
+#lesson-content h2 {
+    font-size: 2em;
+}
+
+#lesson-content h3 {
+    font-size: 1.5em;
+}
+
+#lesson-content ol,
+#lesson-content ul {
+    margin: 2em 0;
+}
+
+/* CODE BLOCKS */
+
+pre {
+    margin: 30px 0;
+    width: max-content;
+    max-width: calc(100% - 30px);
+    min-width: 80%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 0.5em 1em;
+}
+
+code {
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    background-color: var(--text-light-200);
+}
+
+pre code {
+    background-color: inherit;
+}
+
+
+#lesson-content blockquote {
+    font-size: 0.9em;
+    padding: 5px 20px;
+    margin: 30px 0;
+    background-color: #f3f3d4;
+    color: var(--text-dark-200);
+    border-left: 1px solid #ddd886;
+    width: fit-content;
+}
+
+
+#lesson-content .content p,
+#lesson-content .content ul {
+    max-width: 80ch;
+}
+
+#lesson-content .content ul li {
+    margin-bottom: 1em;
+}
+
+#lesson-content .content details summary {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+#lesson-content .progress {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 40px 10px 60px;
+    border-top: 1px solid #ccc;
+    margin-top: 50px;
+}
+
+.progress a.prev {
+    display: flex;
+    align-items: center;
+    color: var(--text-100);
+    opacity: 0.5;
+    text-decoration: none;
+    background: url('/public/images/circle-left.svg') 0 center no-repeat;
+    background-size: 16px;
+    padding-left: 24px;
+    margin-right: auto;
+}
+
+.next-tutorial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #ccc;
+    padding: 40px 0 60px;
+    margin-top: 20px;
+}

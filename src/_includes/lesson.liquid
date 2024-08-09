@@ -1,0 +1,51 @@
+---
+layout: tutorial
+---
+
+
+{% include 'partials/nav_roadmap' %}
+
+<section id="lesson-content">
+
+	<div class="title">
+		{% if prevPageIndex > -1 %}
+		<a class="" href="{{ prevUrl }}">&laquo {{ prevTitle }}</a>
+		{% endif %}
+		{% if nextTitle and nextUrl %}
+		<a class="" href="{{ nextUrl }}">{{ nextTitle }} &raquo;</a>
+		{% endif %}
+	</div>
+
+	<div class="content">
+		{{ content }}
+
+		<div class="progress">
+
+			{% if prevPageIndex > -1 %}
+			<a class="prev" href="{{ prevUrl }}">Prev: {{ prevTitle }}</a>
+			{% endif %}
+
+			{% if nextTitle and nextUrl %}
+			<a class="next button" href="{{ nextUrl }}">
+				Next: {{ nextTitle }}
+			</a>
+			{% else %}
+
+			{% assign tutorials = collections.tutorial %}
+			{% for post in tutorials %}
+			{% if post.data.children == parent %}
+			{% assign currentPageIndex = forloop.index %}
+			{% endif %}
+			{% if forloop.index == currentPageIndex %}
+			<a class="next button" href={{tutorials[currentPageIndex].url}}>
+				{{tutorials[currentPageIndex].data.title}}
+			</a>
+			{% endif %}
+			{% endfor %}
+
+			{% endif %}
+
+
+		</div>
+
+</section>

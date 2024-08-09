@@ -1,0 +1,99 @@
+---
+layout: default
+styles:
+- home.css
+- path.css
+---
+
+
+<main>
+
+    <div class="inner-content">
+        <div class="breadcrumbs">
+            <div class="breadcrumbs">
+                <a href="/courses/">
+                    Learning Paths &raquo;
+                </a>
+                <a href="/courses/{{slug}}">
+                    {{title}}
+                </a>
+            </div>
+        </div>
+        <div class="course-title">
+            <h1>{{title}}</h1>
+            <p>{{summary}}</p>
+        </div>
+    </div>
+
+    <div class="course-description secondary">
+        <div class="inner-content">
+            <div class="content">
+                {{content}}
+            </div>
+        </div>
+    </div>
+
+    <div class="roadmap tertiary">
+        <h2>Roadmap</h2>
+        <ul class="roadmap">
+            {% assign tutorials = collections.all | where : 'data.parent' , learning-path %}
+
+            {% assign beginner = tutorials | where : 'data.level' , 'beginner' %}
+
+            {% assign intermediate = tutorials | where : 'data.level' , 'intermediate' %}
+
+            {% assign advanced = tutorials | where : 'data.level' , 'advanced' %}
+
+            <li class="level">Beginner</li>
+            {%- for post in beginner -%}
+            <li class="tutorial">
+                <p class="title">
+                    <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+                </p>
+                <p class="summary">{{ post.data.summary }}</p>
+                {% assign children = collections.all | where : 'data.parent' , post.data.children %}
+                <p class="meta">{{children.length}} Lessons | {{post.data.children}}</p>
+            </li>
+            {%- endfor -%}
+
+            {% if intermediate.size > 0 %}
+            <li class="level">Intermediate</li>
+            {%- for post in intermediate -%}
+            <li class="tutorial">
+                <p class="title">
+                    <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+                </p>
+                <p class="summary">{{ post.data.summary }}</p>
+                {% assign children = collections.all | where : 'data.parent' , post.data.children %}
+                <p class="meta">{{children.length}} Lessons | {{post.data.children}}</p>
+            </li>
+            {%- endfor -%}
+            {% endif %}
+
+            {% if advanced.size > 0 %}
+            <li class="level">Advanced</li>
+            {%- for post in advanced -%}
+            <li class="tutorial">
+                <p class="title">
+                    <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+                </p>
+                <p class="summary">{{ post.data.summary }}</p>
+                {% assign children = collections.all | where : 'data.parent' , post.data.children %}
+                <p class="meta">{{children.length}} Lessons | {{post.data.children}}</p>
+            </li>
+            {%- endfor -%}
+            {% endif %}
+
+        </ul>
+
+        <p class="start">
+            <a class="button accent" href="{{tutorials[0].url}}">
+                Get Started
+            </a>
+        </p>
+
+
+    </div>
+
+
+</main>

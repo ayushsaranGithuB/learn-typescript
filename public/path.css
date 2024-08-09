@@ -1,0 +1,132 @@
+.course {
+    padding: 50px;
+    line-height: 1.5;
+}
+
+.course-title {
+    display: flex;
+    align-items: center;
+    padding: 100px 0;
+}
+
+.course-title h1 {
+    font-size: 3rem;
+    border-right: 1px solid #ccc;
+    text-wrap: nowrap;
+    padding: 0.5em 1em 0.5em 0;
+}
+
+.course-title p {
+    padding: 2em;
+    font-size: 1.3em;
+
+}
+
+
+.course-description {
+    font-size: 18px;
+    padding: 60px 0;
+}
+
+
+.content {}
+
+.content strong {
+    font-size: 1.1em;
+}
+
+.content h2 {
+    margin-top: 2em;
+}
+
+.start {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4em;
+}
+
+p.start .button {
+    background-color: var(--primary);
+    scale: 1.4;
+}
+
+
+/* ROADMAP */
+
+div.roadmap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+ul.roadmap {
+    margin: 0 0 0 10px;
+    padding: 0;
+    border-left: 2px solid #ccc;
+    max-width: 400px;
+}
+
+ul.roadmap li {
+    list-style-type: none;
+    padding: 0.5em 1em;
+    border: 2px solid #ccc;
+    border-radius: 9px;
+    position: relative;
+    margin: 0 0 30px 20px;
+}
+
+
+ul.roadmap li.level {
+    border: none;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-size: 22px;
+    letter-spacing: 1px;
+    padding: 0 0 0 0.5em;
+}
+
+ul.roadmap li::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    width: 20px;
+    height: 2px;
+    background-color: #ccc;
+    z-index: 1;
+}
+
+ul.roadmap li.level {
+    border: none;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-size: 22px;
+    letter-spacing: 1px;
+    padding: 0;
+    background-color: var(--text-dark-200);
+    margin-left: -10px;
+}
+
+ul.roadmap li.level::before {
+    display: none;
+}
+
+
+ul.roadmap li p {
+    margin: 5px 0;
+}
+
+ul.roadmap li p.title {
+    font-size: 20px;
+}
+
+ul.roadmap li p.summary {
+    font-size: 13px;
+}
+
+ul.roadmap li p.meta {
+    font-size: 11px;
+}

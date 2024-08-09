@@ -1,0 +1,162 @@
+---
+layout: default
+title: LearningPath - Open Source Tutorial Platform
+styles:
+- home.css
+---
+
+<main class="homepage">
+
+	<div class="hero">
+		<h1>
+			Learn Typescript
+		</h1>
+		<h2>
+			Are you ready to take your JavaScript skills to the next level?
+		</h2>
+		<h4>
+			Whether you're a seasoned JavaScript developer or just starting out, TypeScript brings optional static typing and modern features to your codebase, making it easier to write and maintain scalable applications.
+		</h4>
+
+	</div>
+
+	<section class="tutorials secondary">
+		<div class="inner-content">
+
+			<h2>
+				Tailored for Front-End Devs!
+			</h2>
+			<h3>
+				This course is designed for front-end developers who want to level up their coding skills with Typescript.
+			</h3>
+			<h4>
+				Follow a curated learning path to get up to speed with Typescript from basics to advanced topics.
+			</h4>
+			<p>
+				Built using the TypeScript roadmap from <a href="https://roadmap.sh/typescript">Roadmap.sh</a>, This course is designed to help you learn TypeScript from the ground up to discover a robust coding experience.
+			</p>
+
+			<p>
+				Throughout this journey, you'll find examples, exercises, and best practices to help you solidify your understanding of TypeScript. By the end of this course, you'll be well-equipped to harness the full potential of TypeScript in your projects.
+			</p>
+
+			<h1>
+				Select a Starting Point based on your familiarity with TypeScript
+			</h1>
+
+
+			<section>
+				<h2>I'm just getting started With TypeScript</h2>
+				<p>Learn TypeScript syntax, types, and basic concepts & how to set up TypeScript in your projects and configure the TypeScript compiler </p>
+				<div class="paths">
+					{%- for post in collections['tutorial'] -%}
+					<div class="path">
+						<a href="{{ post.url | url }}">
+							<h3>
+								{{ post.data.title }}
+							</h3>
+							<p>
+								{{ post.data.summary }}
+							</p>
+							<p class="meta">
+								<span class="cost">FREE</span>
+								{% assign children = collections.all | where : 'data.parent' , post.data.children %}
+								<span class="length">{{children.length}} Tutorials</span>
+							</p>
+						</a>
+					</div>
+					{%- endfor -%}
+				</div>
+				<a href="/" class="cta button next">
+					Explore All Beginner Tutorials
+				</a>
+			</section>
+
+
+			<section>
+				<h1>I already know some TypeScript</h1>
+				<p>
+					Explore advanced TypeScript concepts, best practices, and how to use TypeScript in real-world projects.
+				</p>
+				<div class="paths">
+					{%- for post in collections['tutorial'] -%}
+					<div class="path">
+						<a href="{{ post.url | url }}">
+							<h3>
+								{{ post.data.title }}
+							</h3>
+							<p>
+								{{ post.data.tagline }}
+							</p>
+							<p class="meta">
+								<span class="cost">FREE</span>
+								{% assign children = collections.all | where : 'data.parent' , post.data.learning-path %}
+								<span class="length">{{children.length}} Tutorials</span>
+							</p>
+						</a>
+					</div>
+					{%- endfor -%}
+				</div>
+			</section>
+
+			<section>
+
+				<h1>Advanced Concepts in TypeScript</h1>
+
+				<div class="paths">
+					{%- for post in collections['tutorial'] -%}
+					<div class="path">
+						<a href="{{ post.url | url }}">
+							<h3>
+								{{ post.data.title }}
+							</h3>
+							<p>
+								{{ post.data.tagline }}
+							</p>
+							<p class="meta">
+								<span class="cost">FREE</span>
+								{% assign children = collections.all | where : 'data.parent' , post.data.learning-path %}
+								<span class="length">{{children.length}} Tutorials</span>
+							</p>
+						</a>
+					</div>
+					{%- endfor -%}
+				</div>
+
+				<a href="/" class="cta button next">
+					Explore All Tutorials
+				</a>
+			</section>
+
+	</section>
+
+
+
+	<section class="recent-tutorials tertiary">
+		<div class="inner-content">
+
+			<h2>
+				Recently Added Tutorials
+			</h2>
+			<p>
+				Explore new topics added to our learning paths
+			</p>
+			<div class="updates">
+				<div class="update">
+					<h3><a href="/">Typescript</a></h3>
+					<p>Learn TypeScript from the ground up to discover a robust coding. experience.</p>
+					<p class="meta">
+						<span class="cost">FREE</span>
+						<span class="length">24 Tutorials</span>
+					</p>
+				</div>
+
+			</div>
+			<a href="/" class="cta button next">
+				Browse All Recent Tutorials
+			</a>
+		</div>
+	</section>
+
+
+</main>

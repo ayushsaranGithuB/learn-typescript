@@ -1,0 +1,131 @@
+/* HERO SECTION */
+
+.hero {
+    max-width: var(--max-width);
+    margin: 50px auto 0;
+    height: 500px;
+    text-align: center;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 80px;
+    margin-top: 0;
+    padding-top: 2rem;
+    font-weight: normal;
+    color: var(--text-dark-100);
+}
+
+.hero h1 strong {
+    color: var(--primary);
+    text-decoration: underline;
+    font-weight: normal;
+}
+
+.hero h2 {
+    font-size: 44px;
+    font-weight: normal;
+}
+
+
+/* SECTION COLORS PATHS */
+
+.secondary {
+    background-color: var(--primary);
+    padding: 30px 0;
+    color: var(--text-light-100);
+}
+
+.secondary a {
+    color: var(--secondary);
+    text-decoration: underline;
+}
+
+.tertiary {
+    background-color: var(--text-dark-200);
+    box-shadow: inset 3px 4px 0 #0000001c;
+    padding: 30px 0;
+    color: var(--text-light-100);
+}
+
+.tertiary a {
+    color: var(--primary-light);
+}
+
+/* TUTORIALS */
+
+.tutorials {
+    margin-top: -70px;
+    z-index: 1;
+    padding: 80px 0 40px;
+    text-align: center;
+}
+
+.tutorials h2 {
+    text-shadow: 3px 4px 0 #0000001c;
+    font-size: 46px;
+    margin-bottom: 0px;
+}
+
+.tutorials p {
+    margin: 0 0 15px;
+}
+
+
+.tutorials section {
+    margin: 80px 80px;
+}
+
+.tutorials .paths {
+    margin: 40px 0;
+}
+
+.tutorials .path {
+    background-color: #ffffff13;
+    padding: 5px 20px;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    text-align: left;
+    box-shadow: 3px 4px 0 0 #00000014;
+    font-size: 14px;
+    line-height: 1.25;
+    cursor: pointer;
+    transition: all 0.5s;
+    margin: 0 auto 30px;
+}
+
+.tutorials .path:hover {
+    background-color: #ffffff36;
+    box-shadow: 3px 8px 0 0 #0000001c;
+    transform: translateY(-5px);
+}
+
+
+.tutorials .path h3 {
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+
+.tutorials .path a {
+    color: var(--text-light-100);
+    text-decoration: none;
+}
+
+.tutorials .path .meta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.tutorials a.cta {
+    text-decoration: none;
+}
+
+
+/* RECENT UPDATES */
+
+.recent-tutorials {
+
+    padding: 40px 0 80px;
+}
