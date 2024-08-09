@@ -1,6 +1,6 @@
 ---
 layout: tutorial-intro
-title: Types - Pt I
+title: Basic Types
 tags: tutorial
 children: TS-3
 level: beginner

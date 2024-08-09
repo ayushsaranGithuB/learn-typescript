@@ -1,12 +1,12 @@
 ---
 layout: lesson
-lesson: 1 - void, undefined & null
-parent: TS-4
+lesson: 9 - void, undefined & null
+parent: TS-3
 ---
 
 # Primitive Types - II
 
-Let's cover three more primitive types that also carry over from JavaScript
+Let's cover three more primitive types that hold different types of empty values that we can use.
 
 ## `void`
 

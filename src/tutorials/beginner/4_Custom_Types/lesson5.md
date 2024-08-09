@@ -4,9 +4,46 @@ lesson: 5 - Inheritance
 parent: TS-4
 ---
 
-## Inheritance
+# Inheritance
 
-Interfaces can extended. This means you can create a new interface that inherits the properties and methods from multiple existing interfaces.
+## Type Intersection
+
+In TypeScript, type aliases can simulate inheritance by combining types using intersection (&) thus extending existing types.
+
+This allows us to create more complex and specific types by building on top of existing ones. For instance, we can define a base type and then extend it with additional properties to create a more specialized type:
+
+```ts twoslash
+// Define a base type alias
+type Person = {
+  name: string;
+  age: number;
+};
+
+// Extend the base type alias with additional properties
+type Employee = Person & {
+  role: string;
+  department: string;
+};
+
+// Example usage
+let employee: Employee = {
+  name: "John",
+  age: 30,
+  role: "Developer",
+  department: "Engineering",
+};
+
+console.log(employee);
+// Output: { name: 'John', age: 30, role: 'Developer', department: 'Engineering' }
+```
+
+Here, Employee inherits the properties from Person and adds its own, allowing us to create a type hierarchy without needing classes. This approach provides a flexible and concise way to manage related types in our TypeScript code.
+
+---
+
+## Interface
+
+Interfaces can also extended. This means you can create a new interface that inherits the properties and methods from multiple existing interfaces.
 
 This allows us to create complex types by combining simpler, more focused types.
 

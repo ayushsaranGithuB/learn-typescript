@@ -1,7 +1,7 @@
 ---
 layout: lesson
-lesson: 2 - any, unknown & never
-parent: TS-4
+lesson: 10 - any, unknown & never
+parent: TS-3
 ---
 
 # Primitive Types III
