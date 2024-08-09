@@ -48,7 +48,7 @@ a {
 }
 
 a:hover {
-    color: var(--secondary);
+    color: var(--primary-light);
 }
 
 a:visited {
@@ -265,6 +265,8 @@ section#lesson-content {
     justify-content: space-between;
     align-items: center;
 }
+
+#lesson-content .title a.next {}
 
 #lesson-content .content {
     padding: 15px 45px;

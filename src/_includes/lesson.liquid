@@ -8,12 +8,21 @@ layout: tutorial
 <section id="lesson-content">
 
 	<div class="title">
+
 		{% if prevPageIndex > -1 %}
-		<a class="" href="{{ prevUrl }}">&laquo {{ prevTitle }}</a>
+		<a class="prev" href="{{ prevUrl }}">&laquo {{ prevTitle }}</a>
 		{% endif %}
-		{% if nextTitle and nextUrl %}
-		<a class="" href="{{ nextUrl }}">{{ nextTitle }} &raquo;</a>
-		{% endif %}
+
+		<p>
+			{{ lesson }}
+		</p>
+		<p>
+			{% if nextTitle and nextUrl %}
+			<a class="next" href="{{ nextUrl }}">{{ nextTitle }} &raquo;</a>
+			{% else %}
+			End of Lesson
+			{% endif %}
+		</p>
 	</div>
 
 	<div class="content">
