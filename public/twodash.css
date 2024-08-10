@@ -168,11 +168,11 @@ pre .error-behind {
 
 pre .error {
     position: absolute;
-    background-color: #db9191;
+    background-color: #312727;
     /* Give the space to the error code */
     display: flex;
     align-items: center;
-    color: black;
+    color: #ff5959;
     max-width: max-content;
     padding-right: 1em;
 }
