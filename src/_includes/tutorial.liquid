@@ -12,15 +12,15 @@ styles:
 	<meta http-equiv="x-ua-compatible" content="ie=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<script src="/public/theme-switcher.js" defer></script>
+	<script src="/public/scripts.js" defer></script>
 
 	<link rel="stylesheet" href="/public/main.css">
-
 	{% if styles %}
 	{% for style in styles %}
 	<link rel="stylesheet" href="/public/{{style}}">
 	{% endfor %}
 	{% endif %}
+	<link rel="stylesheet" href="/public/responsive.css">
 
 	<title>
 		{{title}}

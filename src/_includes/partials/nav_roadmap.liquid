@@ -17,28 +17,36 @@
                 tutorial.data.children==parent or tutorial.data.children==children %} checked {% endif %}>
             {% assign lessons = collections.all | where: 'data.parent' , tutorial.data.children | sort: 'data.lesson' %}
             <ul class="lessons">
-                <li class="{% if page.url == tutorial.url %}active{% endif %} lesson"><a href="{{ tutorial.url }}"
-                        class="tutorial">Introduction</a></li>
+                <li class="{% if page.url == tutorial.url %}active{% endif %} lesson">
+                    <a href="{{ tutorial.url }}" class="tutorial">Introduction</a>
+                </li>
                 {% for lesson in lessons %}
-                {% if lesson.url == page.url %}
-                {% assign currentPageIndex = forloop.index %}
-                {% assign nextPageIndex = forloop.index %}
-                {% assign prevPageIndex = forloop.index | minus: 2 %}
-                {% if prevPageIndex > -1 %}
-                {% assign prevTitle = lessons[prevPageIndex].data.lesson %}
-                {% assign prevUrl = lessons[prevPageIndex].url %}
-                {% endif %}
-                {% if nextPageIndex <= lessons.length %} {% assign nextTitle=lessons[nextPageIndex].data.lesson %} {%
-                    assign nextUrl=lessons[nextPageIndex].url %} {% endif %} {% endif %} <li
-                    class="{% if page.url == lesson.url %}active{% endif %} lesson">
-                    <a href="{{ lesson.url }}">{{ lesson.data.lesson }}</a>
+                    {% if lesson.url == page.url %}
+                        {% assign currentPageIndex = forloop.index %}
+                        {% assign nextPageIndex = forloop.index %}
+                        {% assign prevPageIndex = forloop.index | minus: 2 %}
+                        {% if prevPageIndex > -1 %}
+                            {% assign prevTitle = lessons[prevPageIndex].data.lesson %}
+                            {% assign prevUrl = lessons[prevPageIndex].url %}
+                        {% endif %}
+                        {% if nextPageIndex <= lessons.length %} 
+                            {% assign nextTitle=lessons[nextPageIndex].data.lesson %} 
+                            {% assign nextUrl=lessons[nextPageIndex].url %} 
+                        {% endif %} 
+                    {% endif %} 
+                    <li
+                        class="{% if page.url == lesson.url %}active{% endif %} lesson">
+                        <a href="{{ lesson.url }}">{{ lesson.data.lesson }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
         </li>
         {% endfor %}
     </ul>
-    {% endfor %}
-    </li>
-    </ul>
 
+    <ul class="mobile-menu">
+
+    </ul>
 
 
 </section>

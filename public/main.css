@@ -9,6 +9,10 @@
     /* Spacing */
     --max-width: 1400px;
 
+    /* ICONS */
+
+    --circle-right-white: url('/public/images/circle-right-white.svg');
+
 }
 
 [data-theme='light'] {
@@ -38,6 +42,15 @@
     --text-light-200: #E0E0E0;
     --text-light-300: #BDBDBD;
 
+    /* ICONS */
+
+
+
+    --circle-left-primary: url('/public/images/circle-left.svg');
+    --circle-right-primary: url('/public/images/circle-right.svg');
+    --circle-left-alt: url('/public/images/circle-left-white.svg');
+    --circle-right-alt: var(--circle-right-white);
+
 
 }
 
@@ -66,6 +79,13 @@
     --text-light-100: #1A1A1A;
     --text-light-200: #DDD;
     --text-light-300: #828282;
+
+    /* ICONS */
+
+    --circle-left-primary: url('/public/images/circle-left-white.svg');
+    --circle-right-primary: url('/public/images/circle-right-white.svg');
+    --circle-left-alt: url('/public/images/circle-left.svg');
+    --circle-right-alt: url('/public/images/circle-right.svg');
 
 }
 
@@ -150,7 +170,7 @@ a.button:active {
 
 a.next {
     padding-right: 50px;
-    background: url('/public/images/circle-right.svg') no-repeat calc(100% - 20px) center;
+    background: var(--circle-right-white) no-repeat calc(100% - 20px) center;
     background-size: 24px;
 }
 

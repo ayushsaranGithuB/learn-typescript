@@ -1,0 +1,91 @@
+/* ALL RESPONSIVE STYLES */
+
+/* MOBILE SCREENS */
+
+@media only screen and (max-width: 767px) {
+
+    header {
+        margin-top: 0;
+        border-radius: 0;
+    }
+
+    header nav {
+        margin-right: 0;
+    }
+
+    div.logo a {
+        font-size: 18px;
+        column-gap: 14px;
+    }
+
+    ul.mobile-menu,
+    #lesson-nav ul.mobile-menu {
+        display: block;
+    }
+
+
+    header ul.main-menu {
+        display: none;
+    }
+
+    header svg#icon-menu {
+        width: 30px;
+    }
+
+    main {
+        display: block;
+        overflow: hidden;
+        position: relative;
+    }
+
+    section#lesson-nav {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        background-color: var(--sidebar);
+        z-index: 2;
+        width: calc(100% - 40px);
+        height: 100%;
+        display: none;
+    }
+
+
+    #lesson-nav ul.mobile-menu {
+        display: block;
+    }
+
+    section#lesson-content {
+        z-index: 1;
+    }
+
+    #lesson-content .title a {
+        width: 30px;
+        height: 30px;
+        overflow: hidden;
+        display: block;
+        text-indent: -999px;
+        background: var(--circle-left-primary) no-repeat;
+    }
+
+    #lesson-content .title a.next {
+        background: var(--circle-right-primary) no-repeat;
+    }
+
+    #lesson-content .content {
+        padding: 0 20px;
+    }
+
+    #lesson-content .progress {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 24px;
+    }
+
+    .progress a {}
+
+    .progress a.prev {
+        margin: 0;
+    }
+
+}

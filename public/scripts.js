@@ -1,3 +1,5 @@
+// THEME SWITCHER
+
 const storageKey = "theme-preference";
 
 const onClick = () => {
@@ -42,7 +44,7 @@ window.onload = () => {
   reflectPreference();
 
   console.log("theme.value", theme.value);
-
+  mobileMenu();
   // now this script can find and listen for clicks on the control
   document
     .querySelector("label.theme-slider-label")
@@ -56,3 +58,24 @@ window
     theme.value = isDark ? "dark" : "light";
     setPreference();
   });
+
+// MOBILE MENU
+
+const mobileMenu = () => {
+  const menu = document.getElementById("lesson-nav");
+  const mobileMenu = menu.querySelector(".mobile-menu");
+  const menuButton = document.getElementById("icon-menu");
+
+  const themeSwitcher = document.querySelector("#theme-switch-container label");
+  // clone inside menu ul
+  mobileMenu.appendChild(themeSwitcher.cloneNode(true));
+  // now this script can find and listen for clicks on the control
+  menu
+    .querySelector("label.theme-slider-label")
+    .addEventListener("click", onClick);
+
+  menuButton.addEventListener("click", () => {
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+    console.log("menu.style.display", menu.style.display);
+  });
+};

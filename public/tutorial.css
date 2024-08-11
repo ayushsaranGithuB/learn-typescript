@@ -1,5 +1,6 @@
 @import url('/public/twodash.css');
 
+
 :root {
     --max-width: 1600px;
 }
@@ -116,7 +117,7 @@ button.complete,
 button.next,
 .button.next {
     padding: 15px 44px 15px 20px;
-    background: url('/public/images/circle-right.svg') calc(100% - 12px) center no-repeat var(--primary);
+    background: var(--circle-right-white) calc(100% - 12px) center no-repeat var(--primary);
     background-size: 24px;
     color: var(--secondary);
 }
@@ -239,6 +240,12 @@ div.logo a {}
 }
 
 
+ul.mobile-menu,
+#lesson-nav ul.mobile-menu {
+    display: none;
+}
+
+
 /* LESSON CONTENT ----------------------- */
 
 section#lesson-content {
@@ -263,7 +270,10 @@ section#lesson-content {
     align-items: center;
 }
 
-#lesson-content .title a.next {}
+#lesson-content .title a.next {
+    padding-right: 0;
+    background: none;
+}
 
 #lesson-content .content {
     padding: 15px 45px;
