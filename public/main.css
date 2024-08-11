@@ -9,6 +9,16 @@
     /* Spacing */
     --max-width: 1400px;
 
+
+    /* Colors */
+    --text-dark-100: #1A1A1A;
+    --text-dark-200: #4A4A4A;
+    --text-dark-300: #828282;
+    --text-light-100: #F2F2F2;
+    --text-light-200: #E0E0E0;
+    --text-light-300: #BDBDBD;
+    --primary-color: #0288D1;
+
     /* ICONS */
 
     --circle-right-white: url('/public/images/circle-right-white.svg');
@@ -16,9 +26,6 @@
 }
 
 [data-theme='light'] {
-
-    /* Fonts */
-    --font-bodycopy: 'Lexend Deca', sans-serif;
 
     /* Colors */
 
@@ -34,16 +41,7 @@
     --links-alt: var(--primary);
 
 
-    --text-dark-100: #1A1A1A;
-    --text-dark-200: #4A4A4A;
-    --text-dark-300: #828282;
-
-    --text-light-100: #F2F2F2;
-    --text-light-200: #E0E0E0;
-    --text-light-300: #BDBDBD;
-
     /* ICONS */
-
 
 
     --circle-left-primary: url('/public/images/circle-left.svg');
@@ -69,16 +67,8 @@
     --tertiary: #232323;
 
 
-    --links-light: var(--text-dark-100);
+    --links-light: var(--text-light-100);
     --links-alt: #4cb9f4;
-
-    --text-dark-100: #F2F2F2;
-    --text-dark-200: #E0E0E0;
-    --text-dark-300: #BDBDBD;
-
-    --text-light-100: #1A1A1A;
-    --text-light-200: #DDD;
-    --text-light-300: #828282;
 
     /* ICONS */
 
@@ -97,7 +87,7 @@ body {
     line-height: 1.4;
     margin: 0;
     padding: 0;
-    background-color: var(--secondary);
+    background-color: var(--primary);
     color: var(--primary);
 }
 
@@ -113,7 +103,7 @@ h2,
 h3 {
     letter-spacing: -0.5px;
     font-weight: 300;
-    line-height: 1.1em;
+    line-height: 150%;
 }
 
 h1 {
@@ -175,12 +165,11 @@ a.next {
 }
 
 [data-theme='dark'] a.button {
-    color: var(--text-dark-100);
-    border: 2px solid var(--text-dark-100);
+    color: var(--text-light-100);
 }
 
 [data-theme='dark'] a.button:hover {
-    color: var(--text-dark-100);
+    color: var(--links-alt);
 }
 
 
@@ -193,6 +182,7 @@ header {
     padding: 20px;
     max-width: calc(var(--max-width) - 40px);
     margin: 0 auto;
+    background: var(--primary-color);
 }
 
 
@@ -220,6 +210,10 @@ header a {
     font-weight: 500;
     font-size: 1em;
     color: var(--links-light);
+}
+
+ul.mobile-menu {
+    display: none;
 }
 
 /* THEME SWITCHER */
@@ -276,6 +270,10 @@ header a {
 
 [data-theme='dark'] .theme-slider-label .ball {
     transform: translateX(0);
+}
+
+[data-theme='dark'] .theme-slider-label {
+    background-color: var(--text-dark-100);
 }
 
 

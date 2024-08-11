@@ -1,11 +1,13 @@
 /* HERO SECTION */
 
 .hero {
-    max-width: var(--max-width);
+    max-width: 800px;
     margin: 50px auto 0;
     height: 500px;
     text-align: center;
     z-index: 2;
+    color: var(--text-light-100);
+    padding: 0 40px;
 }
 
 .hero h1 {
@@ -13,7 +15,6 @@
     margin-top: 0;
     padding-top: 2rem;
     font-weight: normal;
-    color: var(--text-dark-100);
 }
 
 .hero h1 strong {
@@ -37,7 +38,7 @@
 }
 
 .secondary a {
-    color: var(--secondary);
+    color: var(--links-light);
     text-decoration: underline;
 }
 
@@ -59,12 +60,14 @@
     z-index: 1;
     padding: 80px 0 40px;
     text-align: center;
+    --max-width: 1000px;
 }
 
 .tutorials h2 {
     text-shadow: 3px 4px 0 #0000001c;
     font-size: 46px;
-    margin-bottom: 0px;
+    margin-bottom: 30px;
+    line-height: 150%;
 }
 
 .tutorials p {
@@ -77,7 +80,8 @@
 }
 
 .tutorials .paths {
-    margin: 40px 0;
+    margin: 40px auto;
+    max-width: 700px;
 }
 
 .tutorials .path {
