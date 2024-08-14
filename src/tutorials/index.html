@@ -5,7 +5,7 @@ styles:
 - home.css
 ---
 
-<main class="homepage">
+<main class="all-tutorials">
 
 	<div class="hero">
 		<h1>
@@ -19,7 +19,7 @@ styles:
 				Get started
 			</a>
 		</p>
-		<img src="/public/images/hero_allTutorials.png" alt="" class="hero" />
+		<span class="hero-image"></span>
 	</div>
 
 
@@ -45,7 +45,7 @@ styles:
 				Select a Starting Point based on your familiarity with TypeScript
 			</h2>
 
-			<section class="skill-level beginner">
+			<section class="skill-level beginner" id="skill-level-beginner">
 				<div class="title">
 					<h3>Beginner</h3>
 					<div>
@@ -74,13 +74,13 @@ styles:
 					{%- endfor -%}
 				</div>
 				<p class="cta">
-					<a href="/" class="button next">
-						Explore All Beginner Tutorials
+					<a href="/tutorials/roadmap/#beginner" class="button next">
+						See the Beginner Roadmap
 					</a>
 				</p>
 			</section>
 
-			<section class="skill-level intermediate">
+			<section class="skill-level intermediate" id="skill-level-intermediate">
 				<div class="title">
 					<h3>Intermediate</h3>
 					<div>
@@ -109,13 +109,13 @@ styles:
 					{%- endfor -%}
 				</div>
 				<p class="cta">
-					<a href="/" class="button next">
-						Explore All Beginner Tutorials
+					<a href="/tutorials/roadmap/#intermediate" class="button next">
+						See the Intermediate Roadmap
 					</a>
 				</p>
 			</section>
 
-			<section class="skill-level advanced">
+			<section class="skill-level advanced" id="skill-level-advanced">
 				<div class="title">
 					<h3>Advanced</h3>
 					<div>
@@ -145,8 +145,8 @@ styles:
 					{%- endfor -%}
 				</div>
 				<p class="cta">
-					<a href="/" class="button next">
-						Explore All Beginner Tutorials
+					<a href="/tutorials/roadmap/#advanced" class="button next">
+						See the Advanced Roadmap
 					</a>
 				</p>
 			</section>

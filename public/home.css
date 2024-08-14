@@ -8,14 +8,52 @@
     position: relative;
 }
 
-.hero img.hero {
+.hero span.hero-image {
     position: absolute;
     top: 0;
     right: 0;
     height: 100%;
-    width: auto;
+    width: 40%;
     z-index: 2;
+    background-size: contain;
+    background-position: right center;
+    background-repeat: no-repeat;
+    display: block;
 }
+
+/* Dark / Light Images for Hero Sections */
+
+.homepage span.hero-image {
+    background-image: url('/public/images/hero_home.png');
+}
+
+[data-theme='dark'] .homepage span.hero-image {
+    background-image: url('/public/images/hero_home_dark.png');
+}
+
+
+.all-tutorials span.hero-image {
+    background-image: url('/public/images/hero_allTutorials.png');
+}
+
+[data-theme='dark'] .all-tutorials span.hero-image {
+    background-image: url('/public/images/hero_allTutorials_dark.png');
+}
+
+
+.roadmap span.hero-image {
+    background-image: url('/public/images/hero_roadmap.png');
+}
+
+[data-theme='dark'] .roadmap span.hero-image {
+    background-image: url('/public/images/hero_roadmap_dark.png');
+}
+
+
+.about span.hero-image {
+    background-image: url('/public/images/creative-commons.svg');
+}
+
 
 .hero h1 {
     font-size: 72px;
@@ -81,14 +119,14 @@
     grid-template-columns: 1fr var(--max-width) 1fr;
     grid-template-areas: gutter-left content gutter-right;
     color: var(--text-primary);
-    background-color: var(--blue-primary);
+    background-color: var(--background-primary);
     z-index: 2;
     position: relative;
 }
 
 .page-header h2 {
     grid-area: 1 / 1 / 1/ 3;
-    background-color: var(--blue-secondary);
+    background-color: var(--background-secondary);
     max-width: 70%;
     border-radius: 0 var(--border-r-l) var(--border-r-l) 0;
     padding: 60px 30px 60px calc(100% - var(--max-width));
@@ -115,11 +153,20 @@
     margin: 0 0 80px;
 }
 
+/* different margins for about page */
+
+.about .page-header .content,
+.about .secondary .inner-content {
+    grid-area: 2 / 2 / 2 / 3;
+    max-width: 100ch;
+    margin: 40px auto;
+}
+
 
 .secondary {
-    background-color: var(--white-secondary);
+    background-color: var(--background-tertiary);
     padding: 80px 0;
-    color: var(--blue-primary);
+    color: var(--text-tertiary);
     box-shadow: var(--inner-shadow);
 }
 
@@ -133,13 +180,13 @@
 }
 
 .secondary div.highlight {
-    border: 12px solid var(--blue-primary);
+    border: 12px solid var(--border-primary);
     border-radius: var(--border-r-l);
     padding: 15px 30px;
     font-size: 22px;
     font-weight: 400;
     column-gap: 40px;
-    margin-bottom: 0px;
+    margin-bottom: 60px;
 }
 
 
@@ -200,7 +247,7 @@ div.tutorials-large {
 .tutorials-large .tutorial {
     width: 50%;
     padding: 0 20px;
-    background-color: #ffffff25;
+    background-color: var(--tutorial-fill);
     border-radius: var(--border-r-l);
     padding: 15px 25px;
     border: 2px solid var(--white-primary);
@@ -220,7 +267,7 @@ div.tutorials-medium {
 .tutorials-medium .tutorial {
     width: calc(45% - 40px);
     padding: 0 20px;
-    background-color: #ffffff25;
+    background-color: var(--tutorial-fill);
     border-radius: var(--border-r-l);
     padding: 15px 25px;
     border: 2px solid var(--blue-primary);
@@ -265,6 +312,7 @@ div.tutorials-medium {
     font-size: 20px;
     font-weight: 600;
     margin: 10px 0 0;
+    color: var(--tutorial-title);
 }
 
 .tutorial p {
@@ -279,9 +327,9 @@ div.tutorials-medium {
 .tutorial p.meta {
     display: flex;
     justify-content: space-between;
-    opacity: 0.75;
     line-height: 1;
     font-weight: 600;
+    color: var(--tutorial-meta);
 }
 
 
@@ -344,6 +392,7 @@ div.tutorials-medium {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    background-color: var(--tutorial-fill);
 }
 
 .roadmap .tutorial:hover {

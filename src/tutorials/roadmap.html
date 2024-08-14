@@ -5,7 +5,7 @@ styles:
 - home.css
 ---
 
-<main class="homepage">
+<main class="roadmap">
 
 	<div class="hero">
 		<h1>
@@ -14,7 +14,7 @@ styles:
 		<h2>
 			Explore Roadmaps for all Skill Levels
 		</h2>
-		<img src="/public/images/hero_roadmap.png" alt="" class="hero" />
+		<span class="hero-image"></span>
 	</div>
 
 	<section class="page-header">
@@ -41,20 +41,20 @@ styles:
 
 			<section class="tutorials-roadmap">
 				<div class="tabs">
-					<label class="selected" for="tab-1">
+					<label class="selected" for="beginner">
 						Beginner
 					</label>
-					<label for="tab-2">
+					<label for="intermediate">
 						Intermediate
 					</label>
-					<label for="tab-3">
+					<label for="advanced">
 						Advanced
 					</label>
 				</div>
 
 				<div class="tab-content">
 					<div class="tab">
-						<input type="radio" id="tab-1" value="tab-1" name="tabs" checked />
+						<input type="radio" id="beginner" value="tab-1" name="tabs" checked />
 						<h3>Beginners Roadmap</h3>
 						<div class="roadmap">
 							{%- for post in collections['tutorial']  limit: 3 -%}
@@ -91,7 +91,7 @@ styles:
 					</div>
 
 					<div class="tab">
-						<input type="radio" id="tab-2" value="tab-2" name="tabs" />
+						<input type="radio" id="intermediate" value="tab-2" name="tabs" />
 						<h3>Intermediate</h3>
 						<div class="roadmap">
 							{%- for post in collections['tutorial']  limit: 3 -%}
@@ -115,7 +115,7 @@ styles:
 					</div>
 
 					<div class="tab">
-						<input type="radio" id="tab-3" value="tab-3" name="tabs" />
+						<input type="radio" id="advanced" value="tab-3" name="tabs" />
 						<h3>Advanced</h3>
 						<div class="roadmap">
 							{%- for post in collections['tutorial']  limit: 3 -%}
@@ -157,7 +157,26 @@ styles:
 					label.classList.remove('selected');
 				});
 				label.classList.add('selected');
+				// update hash
+				window.location.hash = label.getAttribute('for');
 			});
+		});
+
+		// Show the correct tab when page is loaded using the #anchor
+		document.addEventListener('DOMContentLoaded', function() {
+			var hash = window.location.hash;
+			if (hash) {
+				document.querySelector('.tabs label.selected').classList.remove('selected');
+				document.querySelector('.tabs label[for="' + hash.replace('#', '') + '"]').classList.add('selected');
+				// mark the radio button as checked
+				document.querySelector('.tab-content input:checked').checked = false;
+				document.querySelector('#' + hash.replace('#', '')).checked = true;
+				// scroll slowly to section.tutorials-roadmap
+				document.querySelector('.tutorials-roadmap').scrollIntoView({
+					behavior: 'smooth'
+				});
+			}
+
 		});
 	</script>
 

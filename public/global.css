@@ -18,25 +18,66 @@
     --blue-primary: #33B0EF;
     --blue-secondary: #5BC8FF;
     --blue-tertiary: #407F9E;
+
+    --dark-primary: #051D29;
+    --dark-secondary: #191919;
+    --dark-tertiary: #1C3441;
+
+
     --white-primary: #FFFFFF;
     --white-secondary: #F2F2F2;
 
     --text-primary: #FFF;
     --text-secondary: #999;
+    --text-tertiary: var(--blue-primary);
 
-    --border-horizontal: #d6d6d6;
+    --border-primary: var(--blue-primary);
+    --border-secondary: #d6d6d6;
+
+    --background-primary: var(--blue-primary);
+    --background-secondary: var(--blue-secondary);
+    --background-tertiary: var(--white-secondary);
 
     /* Shadows */
 
     --inner-shadow: inset 0 10px 14px rgba(0, 0, 0, 0.15);
 
     /* ICONS */
-
     --circle-right-white: url('/public/images/circle-right-white.svg');
+
+    /* BUTTONS */
+    --button-fill: var(--blue-primary);
+
+    /* TUTORIALS */
+    --tutorial-fill: #ffffff25;
+    --tutorial-stroke: var(--white-primary);
 }
 
+
+/* THEME SWITCHER */
+
+[data-theme='dark'] {
+    --background-primary: var(--dark-primary);
+    --background-secondary: var(--dark-tertiary);
+    --background-tertiary: var(--dark-secondary);
+
+    --border-primary: var(--dark-tertiary);
+
+
+    --text-tertiary: var(--white-primary);
+
+    /* BUTTONS */
+    --button-fill: transparent;
+
+
+    --tutorial-fill: #ffffff10;
+    --tutorial-title: var(--blue-primary);
+    --tutorial-meta: var(--blue-tertiary);
+}
+
+
 body {
-    background-color: var(--blue-primary);
+    background-color: var(--background-primary);
     font-family: var(--font-bodycopy);
     font-weight: 300;
     font-size: 16px;
@@ -116,7 +157,7 @@ ul.mobile-menu {
 
 .theme-slider-label {
     box-sizing: border-box;
-    background-color: var(--text-light-100);
+    background-color: var(--white-secondary);
     width: 50px;
     height: 26px;
     border-radius: 50px;
@@ -151,7 +192,7 @@ ul.mobile-menu {
 
 
 [data-theme='light'] .theme-slider-label .ball {
-    background-color: var(--primary);
+    background-color: var(--blue-primary);
 }
 
 [data-theme='light'] .theme-slider-label .ball {
@@ -175,7 +216,7 @@ p.cta {
 /*  Buttons  */
 
 .button {
-    background: var(--blue-primary) var(--circle-right-white) no-repeat calc(100% - 20px) center;
+    background: var(--button-fill) var(--circle-right-white) no-repeat calc(100% - 20px) center;
     background-size: 26px;
     padding: 14px 54px 14px 24px;
     border-radius: var(--border-r-l);
@@ -189,8 +230,12 @@ p.cta {
 }
 
 .button:hover {
-    transform: translatey(-4px);
+    scale: 1.05;
     box-shadow: 0 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+.button:active {
+    scale: 0.95;
 }
 
 a.button:hover {
