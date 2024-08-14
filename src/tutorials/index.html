@@ -1,6 +1,6 @@
 ---
 layout: default
-title: LearningPath - Open Source Tutorial Platform
+title: All Tutorials - LearningPath - Open Source Tutorial Platform
 styles:
 - home.css
 ---
@@ -9,47 +9,34 @@ styles:
 
 	<div class="hero">
 		<h1>
-			Typescript for Front-End Developers
+			FREE! Typescript Tutorials
 		</h1>
 		<h2>
-			Are you ready to take your JavaScript skills to the next level?
+			Explore All Tutorials by Skill Level
 		</h2>
 		<p>
-			<a href="/" class="button">Get Started</a>
+			<a href="/" class="button">
+				Get started
+			</a>
 		</p>
-		<img src="/public/images/hero_home.png" alt="" class="hero" />
+		<img src="/public/images/hero_allTutorials.png" alt="" class="hero" />
 	</div>
+
 
 	<section class="page-header">
 		<h2 class="title">
-			Designed for front-end devs who want to level up their coding skills with Typescript.
+			Your Roadmap to TypeScript for Front-End Development: A Step-by-Step Guide.
 		</h2>
 		<div class="content">
 			<h4>
-				Whether you're a seasoned JavaScript developer or just starting out...
+				Follow these tutorials in order to get the most out of the course.
 			</h4>
 			<p>
-				TypeScript brings optional static typing and modern features to your codebase, making it easier to write and maintain scalable applications.
+				Each lesson is a building block, designed to expand your skills and knowledge step by step. By following the lessons in order, you’ll ensure that you’re fully prepared for more advanced topics as you progress.
 			</p>
 		</div>
 	</section>
 
-
-	<section class="secondary highlight">
-		<div class="inner-content">
-			<h3>
-				Get up to speed with Typescript from basics to advanced topics.
-			</h3>
-			<div class="highlight">
-				<p>
-					Built using the TypeScript roadmap from Roadmap.sh, This course is designed to help you learn TypeScript from the ground up to discover a robust coding experience.
-				</p>
-				<p>
-					Throughout this journey, you'll find examples, exercises, and best practices to help you solidify your understanding of TypeScript.
-				</p>
-			</div>
-		</div>
-	</section>
 
 	<section class="tutorials secondary">
 		<div class="inner-content">
@@ -66,7 +53,7 @@ styles:
 						<p>Learn TypeScript syntax, types, and basic concepts & how to set up TypeScript in your projects and configure the TypeScript compiler. </p>
 					</div>
 				</div>
-				<div class="tutorials-large">
+				<div class="tutorials-medium">
 					{%- for post in collections['tutorial']  limit: 3 -%}
 					<div class="tutorial">
 						<a href="{{ post.url | url }}">
@@ -83,6 +70,7 @@ styles:
 							</p>
 						</a>
 					</div>
+					<span class="seperator"></span>
 					{%- endfor -%}
 				</div>
 				<p class="cta">
@@ -100,7 +88,7 @@ styles:
 						<p>Explore advanced TypeScript concepts, best practices, and how to use TypeScript in real-world projects. </p>
 					</div>
 				</div>
-				<div class="tutorials-large">
+				<div class="tutorials-medium">
 					{%- for post in collections['tutorial']  limit: 3 -%}
 					<div class="tutorial">
 						<a href="{{ post.url | url }}">
@@ -117,6 +105,7 @@ styles:
 							</p>
 						</a>
 					</div>
+					<span class="seperator"></span>
 					{%- endfor -%}
 				</div>
 				<p class="cta">
@@ -134,7 +123,7 @@ styles:
 						<p>Learn TypeScript syntax, types, and basic concepts & how to set up TypeScript in your projects and configure the TypeScript compiler </p>
 					</div>
 				</div>
-				<div class="tutorials-large">
+				<div class="tutorials-medium">
 					{%- for post in collections['tutorial']  limit: 3 -%}
 					<div class="tutorial">
 						<a href="{{ post.url | url }}">
@@ -151,6 +140,8 @@ styles:
 							</p>
 						</a>
 					</div>
+					<span class="seperator"></span>
+
 					{%- endfor -%}
 				</div>
 				<p class="cta">

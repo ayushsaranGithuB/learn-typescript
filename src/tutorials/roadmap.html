@@ -1,0 +1,165 @@
+---
+layout: default
+title: LearningPath - Open Source Tutorial Platform
+styles:
+- home.css
+---
+
+<main class="homepage">
+
+	<div class="hero">
+		<h1>
+			Typescript Learning Roadmaps
+		</h1>
+		<h2>
+			Explore Roadmaps for all Skill Levels
+		</h2>
+		<img src="/public/images/hero_roadmap.png" alt="" class="hero" />
+	</div>
+
+	<section class="page-header">
+		<h2 class="title">
+			Check out the full Learning Roadmap for every skill Level featured on this website.
+		</h2>
+		<div class="content">
+			<h4>
+				Follow these tutorials in order to get the most out of the course.
+			</h4>
+			<p>
+				Each lesson is a building block, designed to expand your skills and knowledge step by step. By following the lessons in order, you’ll ensure that you’re fully prepared for more advanced topics as you progress.
+			</p>
+		</div>
+	</section>
+
+
+	<section class="tutorials secondary">
+		<div class="inner-content">
+
+			<h2>
+				Select a <strong>Skill Level</strong> to see what topics are covered in every lesson
+			</h2>
+
+			<section class="tutorials-roadmap">
+				<div class="tabs">
+					<label class="selected" for="tab-1">
+						Beginner
+					</label>
+					<label for="tab-2">
+						Intermediate
+					</label>
+					<label for="tab-3">
+						Advanced
+					</label>
+				</div>
+
+				<div class="tab-content">
+					<div class="tab">
+						<input type="radio" id="tab-1" value="tab-1" name="tabs" checked />
+						<h3>Beginners Roadmap</h3>
+						<div class="roadmap">
+							{%- for post in collections['tutorial']  limit: 3 -%}
+							<div class="tutorial">
+								<div class="title">
+									<h4>
+										{{ post.data.title }}
+									</h4>
+									<p>
+										{{ post.data.summary }}
+									</p>
+								</div>
+								<a href="{{ post.url | url }}" class="button">
+									Start Class
+								</a>
+								<ul class="lessons">
+
+									{% assign lessons = collections.all | where: 'data.parent' , post.data.children | sort: 'data.lesson' %}
+									{% for lesson in lessons %}
+									<li class="lesson">
+										<a href="{{ lesson.url }}">
+											<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+												<path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+											</svg>
+											{{ lesson.data.lesson }}</a>
+									</li>
+									{% endfor %}
+
+								</ul>
+							</div>
+							<span class="seperator"></span>
+							{%- endfor -%}
+						</div>
+					</div>
+
+					<div class="tab">
+						<input type="radio" id="tab-2" value="tab-2" name="tabs" />
+						<h3>Intermediate</h3>
+						<div class="roadmap">
+							{%- for post in collections['tutorial']  limit: 3 -%}
+							<div class="tutorial">
+								<a href="{{ post.url | url }}">
+									<h4>
+										{{ post.data.title }}
+									</h4>
+									<p>
+										{{ post.data.summary }}
+									</p>
+									<p class="meta">
+										<span class="cost">FREE</span>
+										{% assign children = collections.all | where : 'data.parent' , post.data.children %}
+										<span class="length">{{children.length}} Tutorials</span>
+									</p>
+								</a>
+							</div>
+							{%- endfor -%}
+						</div>
+					</div>
+
+					<div class="tab">
+						<input type="radio" id="tab-3" value="tab-3" name="tabs" />
+						<h3>Advanced</h3>
+						<div class="roadmap">
+							{%- for post in collections['tutorial']  limit: 3 -%}
+							<div class="tutorial">
+								<a href="{{ post.url | url }}">
+									<h4>
+										{{ post.data.title }}
+									</h4>
+									<p>
+										{{ post.data.summary }}
+									</p>
+									<p class="meta">
+										<span class="cost">FREE</span>
+										{% assign children = collections.all | where : 'data.parent' , post.data.children %}
+										<span class="length">{{children.length}} Tutorials</span>
+									</p>
+								</a>
+							</div>
+							{%- endfor -%}
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+
+
+
+
+		</div>
+
+	</section>
+
+	<script>
+		// Mark the tab as selected when clicked
+		document.querySelectorAll('.tabs label').forEach(function(label) {
+			label.addEventListener('click', function() {
+				document.querySelectorAll('.tabs label').forEach(function(label) {
+					label.classList.remove('selected');
+				});
+				label.classList.add('selected');
+			});
+		});
+	</script>
+
+
+</main>
