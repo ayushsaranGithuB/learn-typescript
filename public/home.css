@@ -599,13 +599,44 @@ div.tutorials-medium {
         width: 100%;
     }
 
-    .tutorials-medium .seperator {
+    .roadmap .tutorial {
+        margin-bottom: 20px;
+        flex-direction: column;
+    }
+
+    .roadmap ul.lessons {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .roadmap ul.lessons li {
+        width: calc(100% - 40px);
+    }
+
+    .tutorials-medium .seperator,
+    .roadmap span.seperator {
         display: none;
     }
 
     .button {
         padding: 14px 44px 12px 14px;
         background-position: calc(100% - 10px) center;
+    }
+
+    .tabs {
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 20px;
+        padding-bottom: 2em;
+        margin-bottom: 2.5em;
+    }
+
+    .about .page-header .content {
+        grid-area: unset;
+        max-width: calc(100vw - 60px);
+        padding-right: 20px;
+        margin: unset;
+        word-wrap: break-word;
     }
 
 }
