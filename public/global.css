@@ -96,7 +96,7 @@ main {
 
 
 a {
-    color: var(--primary);
+    color: var(--blue-primary);
     text-decoration: none;
 }
 
