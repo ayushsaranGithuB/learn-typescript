@@ -130,7 +130,7 @@
     background-color: var(--background-secondary);
     max-width: 70%;
     border-radius: 0 var(--border-r-l) var(--border-r-l) 0;
-    padding: 60px 60px 60px calc(100% - var(--max-width));
+    padding: 60px 60px 60px calc(100% - var(--max-width) + 20px);
     font-size: 34px;
     font-weight: 700;
     line-height: 1.3;
@@ -140,6 +140,7 @@
 .page-header .content {
     grid-area: 2 / 2 / 2 / 3;
     max-width: 80%;
+    padding-left: 20px;
 }
 
 .page-header .content h4 {
@@ -193,9 +194,6 @@
 
 /* TUTORIALS SECTION */
 
-section.tutorials {
-    /* padding-top: 0; */
-}
 
 .tutorials h2 {
     font-size: 36px;
@@ -449,4 +447,165 @@ div.tutorials-medium {
 
 .roadmap span.seperator {
     display: block;
+}
+
+
+/* ALL RESPONSIVE STYLES */
+
+#mobile-menu-checkbox {
+    display: none;
+}
+
+/* TABLETS */
+@media only screen and (max-width: 920px) {
+
+    /* menus */
+    label.mobile-menu {
+        display: none;
+    }
+}
+
+/* MOBILE */
+@media only screen and (max-width: 600px) {
+
+    /* menus */
+    label.mobile-menu {
+        display: block;
+    }
+
+    header ul.main-menu {
+        display: none;
+    }
+
+    header svg#icon-menu {
+        width: 30px;
+        cursor: pointer;
+    }
+
+    #burger-1,
+    #burger-2,
+    #burger-3 {
+        transition: all 0.3s ease;
+    }
+
+    nav:has(input#mobile-menu-checkbox:checked) #burger-1 {
+        transform: rotate(45deg) translate(6px, -6px);
+    }
+
+    nav:has(input#mobile-menu-checkbox:checked) #burger-2 {
+        transform: rotate(-45deg) translate(-14px, 5px);
+    }
+
+    nav:has(input#mobile-menu-checkbox:checked) #burger-3 {
+        transform: translate(0px, 8px);
+    }
+
+    input#mobile-menu-checkbox:checked~ul.main-menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: var(--background-primary);
+        z-index: 100;
+        column-gap: 0;
+        row-gap: 30px;
+        padding: 20px 20px 40px;
+        height: 100%;
+    }
+
+
+    /* hero */
+
+    .hero h1 {
+        width: 100%;
+        font-size: 52px;
+    }
+
+    .hero h2 {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+
+    .hero p {
+        margin: 10px 0 0;
+        padding-bottom: 20px;
+    }
+
+    .hero .button {
+        font-size: 18px;
+    }
+
+    .hero span.hero-image {
+        display: none;
+    }
+
+    .hero::before {
+        top: -50px;
+    }
+
+    .hero::after {
+        display: none;
+    }
+
+    /* page header */
+
+    .page-header {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header h2 {
+        padding: 40px 20px;
+        font-size: 26px;
+        line-height: 1.4;
+        max-width: 80%;
+        word-break: keep-all;
+
+    }
+
+    .page-header .content p {
+        margin-bottom: 60px;
+    }
+
+    .secondary {
+        padding: 40px 0;
+    }
+
+    .secondary h2 {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+
+    .skill-level {
+        padding: 10px 0;
+    }
+
+    .skill-level .title {
+        flex-direction: column;
+        row-gap: 30px;
+    }
+
+    .skill-level .title h3 {
+        font-size: 16px;
+        padding: 20px 50px;
+    }
+
+    div.tutorials-medium {
+        row-gap: 30px;
+    }
+
+    .tutorials-medium .tutorial {
+        width: 100%;
+    }
+
+    .tutorials-medium .seperator {
+        display: none;
+    }
+
+    .button {
+        padding: 14px 44px 12px 14px;
+        background-position: calc(100% - 10px) center;
+    }
+
 }

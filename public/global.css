@@ -325,3 +325,12 @@ footer .creative-commons {
 footer .creative-commons {
     background-image: url('/public/images/creative-commons.svg');
 }
+
+/* MOBILE */
+@media only screen and (max-width: 600px) {
+
+    footer .inner-content {
+        flex-direction: column;
+        row-gap: 40px;
+    }
+}
