@@ -463,6 +463,25 @@ div.tutorials-medium {
     label.mobile-menu {
         display: none;
     }
+
+    /* page header */
+
+    .page-header {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header h2 {
+        padding: 40px 20px;
+        font-size: 26px;
+        line-height: 1.4;
+        max-width: 80%;
+        word-break: keep-all;
+
+    }
+
+    .page-header .content p {
+        margin-bottom: 60px;
+    }
 }
 
 /* MOBILE */
@@ -475,11 +494,6 @@ div.tutorials-medium {
 
     header ul.main-menu {
         display: none;
-    }
-
-    header svg#icon-menu {
-        width: 30px;
-        cursor: pointer;
     }
 
     #burger-1,
@@ -551,22 +565,7 @@ div.tutorials-medium {
 
     /* page header */
 
-    .page-header {
-        grid-template-columns: 1fr;
-    }
-
-    .page-header h2 {
-        padding: 40px 20px;
-        font-size: 26px;
-        line-height: 1.4;
-        max-width: 80%;
-        word-break: keep-all;
-
-    }
-
-    .page-header .content p {
-        margin-bottom: 60px;
-    }
+    
 
     .secondary {
         padding: 40px 0;
@@ -597,6 +596,15 @@ div.tutorials-medium {
 
     .tutorials-medium .tutorial {
         width: 100%;
+    }
+
+    .tutorials-large .tutorial {
+        width: calc(100% - 50px);
+    }
+
+    .tutorials-large {
+        flex-direction: column;
+        row-gap: 30px;
     }
 
     .roadmap .tutorial {

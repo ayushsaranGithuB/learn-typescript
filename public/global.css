@@ -146,7 +146,12 @@ header a {
     color: var(--white-primary);
 }
 
-ul.mobile-menu {
+header svg#icon-menu {
+    width: 30px;
+    cursor: pointer;
+}
+
+header .mobile-menu {
     display: none;
 }
 
@@ -327,7 +332,7 @@ footer .creative-commons {
 }
 
 /* MOBILE */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
 
     footer .inner-content {
         flex-direction: column;
