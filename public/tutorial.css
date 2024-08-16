@@ -425,7 +425,7 @@ main {
     justify-content: stretch;
     background-color: var(--sidebar);
     grid-template-columns: 300px 1fr;
-    padding: 14px 0;
+    padding: 16px 0 32px;
 }
 
 section#lesson-nav {
@@ -684,4 +684,107 @@ pre code {
     border-top: 1px solid #ccc;
     padding: 40px 0 60px;
     margin-top: 20px;
+}
+
+
+/* FOOTER ------------------------ */
+
+footer {
+    margin: 0 auto 20px;
+    padding: 0;
+    color: var(--white-primary);
+    text-align: center;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+footer::before {
+    content: "";
+    border: 80px solid #e9eaeb20;
+    border-radius: var(--border-r-l);
+    position: absolute;
+    top: -140px;
+    left: -860px;
+    width: 730px;
+    height: 611px;
+    transform: rotate(36deg);
+    z-index: 1;
+}
+
+footer::after {
+    content: "";
+    border: 80px solid #e9eaeb20;
+    border-radius: var(--border-r-l);
+    position: absolute;
+    top: 140px;
+    right: -660px;
+    width: 730px;
+    height: 611px;
+    transform: rotate(18deg);
+    z-index: 1;
+}
+
+footer .inner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    z-index: 2;
+    padding: 54px 40px 40px;
+    background-color: var(--primary);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    max-width: calc(var(--max-width) - 80px);
+}
+
+footer .inner-content * {
+    opacity: 0.8;
+}
+
+footer .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 8px;
+    font-weight: 600;
+    font-size: 22px;
+    width: max-content;
+    margin-bottom: 15px;
+}
+
+footer .links {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+footer p {
+    margin: 0 0 2px;
+}
+
+footer a:link,
+footer a:visited {
+    color: var(--white-primary);
+    text-decoration: underline;
+}
+
+footer .github,
+footer .creative-commons {
+    background: url('/public/images/github.svg') no-repeat left 2px;
+    background-size: 26px;
+    padding-left: 36px;
+}
+
+footer .creative-commons {
+    background-image: url('/public/images/creative-commons.svg');
+}
+
+/* MOBILE */
+@media only screen and (max-width: 800px) {
+
+    footer .inner-content {
+        flex-direction: column;
+        row-gap: 40px;
+    }
 }
