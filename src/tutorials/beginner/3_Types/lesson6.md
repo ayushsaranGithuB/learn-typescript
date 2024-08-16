@@ -34,8 +34,8 @@ greet(1); // Argument of type '1' is not assignable to parameter of type 'string
 Even if you don’t have type annotations on your parameters, TypeScript will still check that you passed the right number of arguments.
 
 ```ts twoslash
-// @errors: 7006 2554
-function greet(name) {
+// @errors:  2554
+function greet(name: string) {
   console.log("Hello, " + name);
 }
 greet(); // Error: Expected 1 arguments, but got 0.
