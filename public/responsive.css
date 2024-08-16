@@ -18,9 +18,13 @@
         column-gap: 14px;
     }
 
-    ul.mobile-menu,
+    .mobile-menu,
     #lesson-nav ul.mobile-menu {
         display: block;
+    }
+
+    label.mobile-menu {
+        cursor: pointer;
     }
 
 

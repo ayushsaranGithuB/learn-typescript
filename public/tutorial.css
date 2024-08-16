@@ -249,7 +249,7 @@ div.logo a {}
 
 section#lesson-content {
     background: var(--secondary);
-    color: var(--text-dark-200);
+    color: var(--text-lesson-content);
     border-radius: 10px 0 0 10px;
     font-size: 14px;
     line-height: 1.5;
