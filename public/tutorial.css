@@ -33,6 +33,7 @@
     --dark-tertiary: #1C3441;
 
     --blue-tertiary: #407F9E;
+    --border-primary: #E0E0E0;
 
 
     /* ICONS */
@@ -65,6 +66,10 @@
 
     --footer-fill: var(--blue-tertiary);
 
+
+    --header-fill: var(--primary);
+    --footer-text: var(--white-primary);
+
     /* ICONS */
 
 
@@ -95,6 +100,12 @@
 
     --links-light: var(--text-light-100);
     --links-alt: #4cb9f4;
+
+    --header-fill: var(--text-dark-100);
+
+
+    --border-primary: #e0e0e029;
+    --footer-text: var(--text-light-300);
 
     /* ICONS */
 
@@ -208,7 +219,7 @@ header {
     padding: 10px 20px;
     max-width: calc(var(--max-width) - 40px);
     margin: 10px auto 0;
-    background: var(--primary);
+    background: var(--header-fill);
     /* color: violet; */
     border-radius: 10px 10px 0 0;
 }
@@ -434,7 +445,15 @@ section#lesson-nav {
     color: var(--text-light-200);
 }
 
-div.logo a {}
+#lesson-nav h4 {
+    font-size: 1.3em;
+    border-bottom: 1px solid var(--border-primary);
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    background: url('/public/images/bars.svg') no-repeat left 2px;
+    background-size: 24px;
+    padding-left: 32px;
+}
 
 #lesson-nav .tutorial-title {
     font-weight: 600;
@@ -442,7 +461,7 @@ div.logo a {}
 }
 
 #lesson-nav ul {
-    margin: 0 0 0 5px;
+    margin: 0;
     padding: 0 0 0 0;
     list-style: none;
     display: flex;
@@ -498,9 +517,10 @@ div.logo a {}
 
 #lesson-nav ul.tutorials li label {
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     cursor: pointer;
     font-weight: 600;
+    font-size: 1.1em;
 }
 
 #lesson-nav ul.tutorials li label::before {
@@ -515,6 +535,7 @@ div.logo a {}
 
 #lesson-nav ul.tutorials li ul.lessons {
     display: none;
+    margin: 0 0 0 5px;
 }
 
 #lesson-nav ul.tutorials input[type="checkbox"] {
@@ -548,7 +569,7 @@ section#lesson-content {
     padding: 20px;
     font-size: 14px;
     background-color: var(--foreground);
-    border-bottom: 1px solid var(--text-light-100);
+    border-bottom: 1px solid var(--border-primary);
     height: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -698,7 +719,7 @@ pre code {
 footer {
     margin: 0 auto 20px;
     padding: 0;
-    color: var(--white-primary);
+    color: var(--footer-text);
     text-align: center;
     text-align: left;
     position: relative;
@@ -741,12 +762,10 @@ footer .inner-content {
     background-color: var(--primary);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    box-shadow: var(--inner-shadow);
     max-width: calc(var(--max-width) - 80px);
 }
 
-footer .inner-content * {
-    opacity: 0.8;
-}
 
 footer .logo {
     display: flex;
@@ -784,13 +803,4 @@ footer .creative-commons {
 
 footer .creative-commons {
     background-image: url('/public/images/creative-commons.svg');
-}
-
-/* MOBILE */
-@media only screen and (max-width: 800px) {
-
-    footer .inner-content {
-        flex-direction: column;
-        row-gap: 40px;
-    }
 }

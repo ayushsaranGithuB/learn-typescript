@@ -2,11 +2,12 @@
 
 /* MOBILE SCREENS */
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 768px) {
 
     header {
         margin-top: 0;
         border-radius: 0;
+        padding: 20px;
     }
 
     header nav {
@@ -79,9 +80,10 @@
 
     section#lesson-content {
         z-index: 1;
+        border-radius: 10px;
     }
 
-    #lesson-content .title a {
+    #lesson-content .title  a {
         width: 30px;
         height: 30px;
         overflow: hidden;
@@ -113,6 +115,25 @@
 
     .progress a.prev {
         margin: 0;
+    }
+
+    footer {
+        margin-bottom: 0;
+    }
+
+    footer .inner-content {
+        flex-direction: column;
+        row-gap: 40px;
+        align-items: center;
+        text-align: center;
+    }
+
+    footer .inner-content div {
+        max-width: 400px;
+    }
+
+    footer .logo {
+        margin: 0 auto 20px;
     }
 
 }
