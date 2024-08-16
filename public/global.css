@@ -327,6 +327,11 @@ footer p {
     margin: 0 0 2px;
 }
 
+footer a {
+    color: inherit;
+    text-decoration: underline;
+}
+
 footer .github,
 footer .creative-commons {
     background: url('/public/images/github.svg') no-repeat left 2px;
