@@ -2,7 +2,7 @@
 
 /* MOBILE SCREENS */
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 900px) {
 
     header {
         margin-top: 0;
@@ -36,10 +36,29 @@
         width: 30px;
     }
 
+    #burger-1,
+    #burger-2,
+    #burger-3 {
+        transition: all 0.3s ease;
+    }
+
+    nav:has(input#mobile-menu-checkbox:checked) #burger-1 {
+        transform: rotate(45deg) translate(6px, -6px);
+    }
+
+    nav:has(input#mobile-menu-checkbox:checked) #burger-2 {
+        transform: rotate(-45deg) translate(-14px, 5px);
+    }
+
+    nav:has(input#mobile-menu-checkbox:checked) #burger-3 {
+        transform: translate(0px, 8px);
+    }
+
     main {
         display: block;
         overflow: hidden;
         position: relative;
+        padding: 0;
     }
 
     section#lesson-nav {
