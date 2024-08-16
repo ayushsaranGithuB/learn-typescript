@@ -1,8 +1,15 @@
-<li class="tutorial">
-    <p class="title">
-        <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+<div class="tutorial">
+  <a href="{{ post.url | url }}">
+    <h4>
+      {{ post.data.title }}
+    </h4>
+    <p>
+      {{ post.data.summary }}
     </p>
-    <p class="summary">{{ post.data.summary }}</p>
-    {%- assign children = collections.all | where : 'data.parent' , post.data.children -%}
-    <p class="meta">{{children.length}} Lessons | {{post.data.children}}</p>
-</li>
+    <p class="meta">
+      <span class="cost">FREE</span>
+      <span class="length">{{ children.length }} Tutorials</span>
+    </p>
+  </a>
+</div>
+<span class="seperator"></span>

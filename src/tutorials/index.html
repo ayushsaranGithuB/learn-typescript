@@ -1,6 +1,6 @@
 ---
 layout: default
-title: All Tutorials - LearningPath - Open Source Tutorial Platform
+title: All Typescript Tutorials - Open Source Learning Platform
 styles:
 - home.css
 ---
@@ -49,30 +49,27 @@ styles:
 					</div>
 				</div>
 				<div class="tutorials-medium">
-					{%- for post in collections['tutorial']  limit: 3 -%}
-					<div class="tutorial">
-						<a href="{{ post.url | url }}">
-							<h4>
-								{{ post.data.title }}
-							</h4>
-							<p>
-								{{ post.data.summary }}
-							</p>
-							<p class="meta">
-								<span class="cost">FREE</span>
-								{% assign children = collections.all | where : 'data.parent' , post.data.children %}
-								<span class="length">{{children.length}} Tutorials</span>
-							</p>
-						</a>
-					</div>
-					<span class="seperator"></span>
+					{% assign beginner = collections['tutorial'] | where : 'data.level' , 'beginner' %}
+					{%- for post in beginner  limit: 5 -%}
+					{% assign children = collections.all | where: 'data.parent', post.data.children %}
+					{% render 'partials/list_tutorials', post: post, children: children %}
 					{%- endfor -%}
+
+					{% if beginner.size > 5 %}
+					<span class="seperator"></span>
+					<div class="tutorial balance">
+						<p>
+							+
+							{{ beginner.size | minus: 5 }} More...
+						</p>
+					</div>
+					{% endif %}
 				</div>
-				<p class="cta">
+				<div class="cta">
 					<a href="/tutorials/roadmap/#beginner" class="button next">
 						See the Beginner Roadmap
 					</a>
-				</p>
+				</div>
 			</section>
 
 			<section class="skill-level intermediate" id="skill-level-intermediate">
@@ -84,24 +81,19 @@ styles:
 					</div>
 				</div>
 				<div class="tutorials-medium">
-					{%- for post in collections['tutorial']  limit: 3 -%}
-					<div class="tutorial">
-						<a href="{{ post.url | url }}">
-							<h4>
-								{{ post.data.title }}
-							</h4>
-							<p>
-								{{ post.data.summary }}
-							</p>
-							<p class="meta">
-								<span class="cost">FREE</span>
-								{% assign children = collections.all | where : 'data.parent' , post.data.children %}
-								<span class="length">{{children.length}} Tutorials</span>
-							</p>
-						</a>
-					</div>
-					<span class="seperator"></span>
+					{% assign intermediate = collections['tutorial'] | where : 'data.level' , 'intermediate' %}
+					{%- for post in intermediate  limit: 5 -%}
+					{% render 'partials/list_tutorials', post: post %}
 					{%- endfor -%}
+
+					{% if intermediate.size > 5 %}
+					<div class="balance">
+						<p>
+							+
+							{{ intermediate.size | minus: 5 }} More...
+						</p>
+					</div>
+					{% endif %}
 				</div>
 				<p class="cta">
 					<a href="/tutorials/roadmap/#intermediate" class="button next">
@@ -119,25 +111,19 @@ styles:
 					</div>
 				</div>
 				<div class="tutorials-medium">
-					{%- for post in collections['tutorial']  limit: 3 -%}
-					<div class="tutorial">
-						<a href="{{ post.url | url }}">
-							<h4>
-								{{ post.data.title }}
-							</h4>
-							<p>
-								{{ post.data.summary }}
-							</p>
-							<p class="meta">
-								<span class="cost">FREE</span>
-								{% assign children = collections.all | where : 'data.parent' , post.data.children %}
-								<span class="length">{{children.length}} Tutorials</span>
-							</p>
-						</a>
-					</div>
-					<span class="seperator"></span>
-
+					{% assign advanced = collections['tutorial'] | where : 'data.level' , 'advanced' %}
+					{%- for post in advanced  limit: 5 -%}
+					{% render 'partials/list_tutorials', post: post %}
 					{%- endfor -%}
+
+					{% if advanced.size > 5 %}
+					<div class="balance">
+						<p>
+							+
+							{{ advanced.size | minus: 5 }} More...
+						</p>
+					</div>
+					{% endif %}
 				</div>
 				<p class="cta">
 					<a href="/tutorials/roadmap/#advanced" class="button next">

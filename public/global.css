@@ -29,7 +29,7 @@
 
     --text-primary: #FFF;
     --text-secondary: #999;
-    --text-tertiary: var(--blue-primary);
+    --text-tertiary: #5d727d;
 
     --border-primary: var(--blue-primary);
     --border-secondary: #d6d6d6;
@@ -37,6 +37,9 @@
     --background-primary: var(--blue-primary);
     --background-secondary: var(--blue-secondary);
     --background-tertiary: var(--white-secondary);
+
+    --tutorial-title: var(--blue-primary);
+    --tutorial-meta: var(--blue-tertiary);
 
     --footer-fill: var(--blue-tertiary);
 
@@ -74,8 +77,6 @@
 
 
     --tutorial-fill: #ffffff10;
-    --tutorial-title: var(--blue-primary);
-    --tutorial-meta: var(--blue-tertiary);
 }
 
 
@@ -92,6 +93,12 @@ body {
 main {
     max-width: 100vw;
     overflow: hidden;
+}
+
+html,
+body {
+    /* smooth scroll */
+    scroll-behavior: smooth;
 }
 
 
@@ -216,7 +223,7 @@ header .mobile-menu {
 }
 
 
-p.cta {
+.cta {
     text-align: center;
     margin: 40px auto;
 }

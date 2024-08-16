@@ -57,59 +57,22 @@ styles:
 						<input type="radio" id="beginner" value="tab-1" name="tabs" checked />
 						<h3>Beginners Roadmap</h3>
 						<div class="roadmap">
-							{%- for post in collections['tutorial']  limit: 3 -%}
-							<div class="tutorial">
-								<div class="title">
-									<h4>
-										{{ post.data.title }}
-									</h4>
-									<p>
-										{{ post.data.summary }}
-									</p>
-								</div>
-								<a href="{{ post.url | url }}" class="button">
-									Start Class
-								</a>
-								<ul class="lessons">
-
-									{% assign lessons = collections.all | where: 'data.parent' , post.data.children | sort: 'data.lesson' %}
-									{% for lesson in lessons %}
-									<li class="lesson">
-										<a href="{{ lesson.url }}">
-											<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
-												<path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
-											</svg>
-											{{ lesson.data.lesson }}</a>
-									</li>
-									{% endfor %}
-
-								</ul>
-							</div>
-							<span class="seperator"></span>
+							{% assign beginner = collections['tutorial'] | where : 'data.level' , 'beginner' -%}
+							{%- for post in beginner -%}
+							{% assign lessons = collections.all | where: 'data.parent', post.data.children | sort: 'data.lesson' %}
+							{% render 'partials/roadmap_tutorial', post: post, lessons: lessons %}
 							{%- endfor -%}
 						</div>
 					</div>
 
 					<div class="tab">
 						<input type="radio" id="intermediate" value="tab-2" name="tabs" />
-						<h3>Intermediate</h3>
+						<h3>Intermediate Roadmap</h3>
 						<div class="roadmap">
-							{%- for post in collections['tutorial']  limit: 3 -%}
-							<div class="tutorial">
-								<a href="{{ post.url | url }}">
-									<h4>
-										{{ post.data.title }}
-									</h4>
-									<p>
-										{{ post.data.summary }}
-									</p>
-									<p class="meta">
-										<span class="cost">FREE</span>
-										{% assign children = collections.all | where : 'data.parent' , post.data.children %}
-										<span class="length">{{children.length}} Tutorials</span>
-									</p>
-								</a>
-							</div>
+							{% assign intermediate = collections['tutorial'] | where : 'data.level' , 'intermediate' %}
+							{%- for post in intermediate  -%}
+							{% assign lessons = collections.all | where: 'data.parent', post.data.children | sort: 'data.lesson' %}
+							{% render 'partials/roadmap_tutorial', post: post, lessons: lessons %}
 							{%- endfor -%}
 						</div>
 					</div>
@@ -118,23 +81,12 @@ styles:
 						<input type="radio" id="advanced" value="tab-3" name="tabs" />
 						<h3>Advanced</h3>
 						<div class="roadmap">
-							{%- for post in collections['tutorial']  limit: 3 -%}
-							<div class="tutorial">
-								<a href="{{ post.url | url }}">
-									<h4>
-										{{ post.data.title }}
-									</h4>
-									<p>
-										{{ post.data.summary }}
-									</p>
-									<p class="meta">
-										<span class="cost">FREE</span>
-										{% assign children = collections.all | where : 'data.parent' , post.data.children %}
-										<span class="length">{{children.length}} Tutorials</span>
-									</p>
-								</a>
-							</div>
+							{% assign advanced = collections['tutorial'] | where : 'data.level' , 'advanced' %}
+							{%- for post in advanced  -%}
+							{% assign lessons = collections.all | where: 'data.parent', post.data.children | sort: 'data.lesson' %}
+							{% render 'partials/roadmap_tutorial', post: post, lessons: lessons %}
 							{%- endfor -%}
+
 						</div>
 					</div>
 
