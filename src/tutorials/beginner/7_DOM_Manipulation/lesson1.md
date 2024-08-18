@@ -55,6 +55,8 @@ const knownButton = document.querySelector("button")!; // ! = override
 let valueX = knownButton.value; // This is allowed
 ```
 
+The non-null operator (!) is a kind of type assertion. It allows us to tell TypeScript that a value will never be null or undefined. It’s important to be careful when using the non-null assertion operator, as it can lead to runtime errors if the value is actually `null` or `undefined`.
+
 ## Explicitly Specifying Type
 
 By specifying the type of element TypeScript provides us with auto-completion of its properties in our editor and compile-time error checking, warning us if we try to use a property that does not exist for that element
