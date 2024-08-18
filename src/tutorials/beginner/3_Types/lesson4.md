@@ -27,11 +27,33 @@ Above, we have a numeric enum where `Up` is initialized with `1`. All of the 
 
 So, `Direction.Up` has the value `1`, `Down` has `2`, `Left` has `3`, and `Right` has `4`.
 
-By default, TypeScript enums are numeric. The first member gets the value 0, and the values increase by 1 for each subsequent member.
+By default, TypeScript enums are numeric.
 
-If we left off the initializer for `Up`, it would have the value `0` and the rest of the members would be auto-incremented from there.
+The first member gets the value 0, and the values increase by 1 for each subsequent member.
 
-**You can assign custom values to enum members.**
+```ts twoslash
+enum Colors {
+  Red, // 0
+  Green, // 1
+  Blue, // 2
+}
+```
+
+We left off the initializer for `Red`, so it has the value `0` and the rest of the colors are auto-incremented from there.
+
+You might see this being used when handling error codes in API requests
+
+```ts twoslash
+enum ClientErrorCode {
+  BadRequest = 400,
+  Unauthorized, //401
+  PaymentRequired, //402
+  Forbidden, //403
+  NotFound, //404
+}
+```
+
+Remember, you can assign non-sequential custom values to enum members.
 
 ```ts twoslash
 enum Status {
