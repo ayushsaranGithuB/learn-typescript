@@ -6,7 +6,7 @@ parent: TS-201
 
 # Truthiness narrowing
 
-In JavaScript we can can use certain operator to check the truthiness of a value. Operators like `if`, `&&`, `!`, `||` etc..
+In JavaScript we can use certain operator to check the truthiness of a value. Operators like `if`, `&&`, `!`, `||` etc..
 
 These constructs will _coerce_ the value of their condition to check for truthiness, even if the value is not a _boolean_. Consider:
 
