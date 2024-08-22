@@ -42,10 +42,37 @@ let answer = divide(10, 2);
 console.log(answer); // 5
 
 let answer = divide("ten", 2);
-console.log(answer); // ERROR: NaN
+console.log(answer); // Will produce a runtime ERROR: NaN
 ```
 
-The function was expecting two numbers as parameters, when we passed a string as the first number it produced an error, because we cannot divide a string by a number.
+The function was expecting two numbers as parameters, when we passed a string as the first number it produced an error at runtime, because we cannot divide a string by a number.
+
+## Let's fix it with TypeScript
+
+Ideally we would like to catch such errors at development time, before we ship our code to production
+
+Let's see how Typescript can help:
+
+```ts twoslash
+function divide(num1: number, num2: number) {
+  let result = num1 / num2;
+  return result;
+}
+```
+
+By assigning the type `:number` to the arguments of the function we are telling typescript that this function only accepts a number as an argument.
+
+If we now try to pass a string such as `ten`, Typescript will warn us
+
+```ts twoslash
+// @errors: 2345
+function divide(num1: number, num2: number) {
+  let result = num1 / num2;
+  return result;
+}
+
+let answer = divide("ten", 2);
+```
 
 **Typescript can help us catch such errors before we ship this code into production.**
 
